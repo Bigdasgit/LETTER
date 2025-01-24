@@ -5,23 +5,24 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
+import copy
 import numpy as np
 from tqdm import tqdm
 
 args = argparse.ArgumentParser(description='args')
 args.add_argument('--batch', default=128, type=int)
 args.add_argument('--dims', default=768, type=int)
-args.add_argument('--lr', default=0.0001, type=float)
+args.add_argument('--lr', default=0.0005, type=float)
 args.add_argument('--hidden', default=128, type=int)
 args.add_argument('--reg_lr', default=1, type=float)
 args.add_argument('--CL', default=0, type=int)
 args.add_argument('--aa', default=0, type=int)
 args.add_argument('--cl_lr', default=1, type=float)
 args.add_argument('--aa_lr', default=1, type=float)
-args.add_argument('--early_stop', default=5, type=int)
-args.add_argument('--dataset', default='CL', type=str)
+args.add_argument('--early_stop', default=15, type=int)
+args.add_argument('--dataset', default='TG', type=str)
 args.add_argument('--pivot', default=3, type=int)
-args.add_argument('--edge_ratio', default=100, type=int)
+args.add_argument('--edge_ratio', default=50, type=int)
 args.add_argument('--device', default=0, type=int)
 args.add_argument('--rand', default=10, type=int)
 args = args.parse_args()
