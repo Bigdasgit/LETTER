@@ -382,9 +382,9 @@ def load_ratings(dataset, max_reviewer_index, max_asin_index):
 
 def main():
     dataset = args.dataset
-    train_path = f'./{dataset}/train.json'
-    val_path = f'./{dataset}/val.json'
-    test_path = f'./{dataset}/test.json'
+    train_path = f'./dataset/{dataset}/train.json'
+    val_path = f'./dataset/{dataset}/val.json'
+    test_path = f'./dataset/{dataset}/test.json'
     
     train_data, val_data, test_data = load_data(train_path, val_path, test_path)
 
@@ -397,12 +397,12 @@ def main():
     val_loader = DataLoader(val_data, batch_size=args.batch, shuffle=False, collate_fn=collate_fn)
     test_loader = DataLoader(test_data, batch_size=args.batch, shuffle=False, collate_fn=collate_fn)
     
-    u_review = np.load(f'./{dataset}/encoded_user_review_v2.npy', allow_pickle=True)
-    u_p_review = np.load(f'./{dataset}/encoded_user_review_rating_{args.pivot+1}_or_above_v2.npy', allow_pickle=True)
-    u_n_review = np.load(f'./{dataset}/encoded_user_review_rating_{args.pivot}_or_below_v2.npy', allow_pickle=True)
-    i_review = np.load(f'./{dataset}/encoded_item_review_v2.npy', allow_pickle=True)
-    i_p_review = np.load(f'./{dataset}/encoded_item_review_rating_{args.pivot+1}_or_above_v2.npy', allow_pickle=True)
-    i_n_review = np.load(f'./{dataset}/encoded_item_review_rating_{args.pivot}_or_below_v2.npy', allow_pickle=True)
+    u_review = np.load(f'./dataset/{dataset}/encoded_user_review_v2.npy', allow_pickle=True)
+    u_p_review = np.load(f'./dataset/{dataset}/encoded_user_review_rating_{args.pivot+1}_or_above_v2.npy', allow_pickle=True)
+    u_n_review = np.load(f'./dataset/{dataset}/encoded_user_review_rating_{args.pivot}_or_below_v2.npy', allow_pickle=True)
+    i_review = np.load(f'./dataset/{dataset}/encoded_item_review_v2.npy', allow_pickle=True)
+    i_p_review = np.load(f'./dataset/{dataset}/encoded_item_review_rating_{args.pivot+1}_or_above_v2.npy', allow_pickle=True)
+    i_n_review = np.load(f'./dataset/{dataset}/encoded_item_review_rating_{args.pivot}_or_below_v2.npy', allow_pickle=True)
 
     u_ratings, i_ratings = load_ratings(train_path, num_users, num_items)
 
