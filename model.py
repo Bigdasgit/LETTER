@@ -63,7 +63,7 @@ def collate_fn(batch):
     items = torch.tensor([x[2] for x in batch], dtype=torch.long)
     
     return user_ids, items, ratings
-
+#model
 class Model(nn.Module):
     def __init__(self, num_users, num_items, embedding_dim, hidden_dim, CL, aa, reviews, ratings):
         super(Model, self).__init__()
