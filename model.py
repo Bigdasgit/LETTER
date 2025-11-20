@@ -50,7 +50,7 @@ class ReviewDataset(Dataset):
     
     def __getitem__(self, idx):
         return self.data[idx]
-
+#load_data
 def load_data(train_path, val_path, test_path):
     train_data = ReviewDataset(train_path)
     val_data = ReviewDataset(val_path)
