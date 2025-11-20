@@ -191,7 +191,7 @@ class Model(nn.Module):
         self.rr_attn_un = nn.MultiheadAttention(embed_dim=hidden_dim, num_heads=8, batch_first=True, dropout=0.3)
         self.rr_attn_ip = nn.MultiheadAttention(embed_dim=hidden_dim, num_heads=8, batch_first=True, dropout=0.3)
         self.rr_attn_in = nn.MultiheadAttention(embed_dim=hidden_dim, num_heads=8, batch_first=True, dropout=0.3)
-
+    #graph
     def graph_edge__(self, user_emb, item_emb, user_ids, item_ids):
 
         k = args.edge_ratio
