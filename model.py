@@ -34,6 +34,7 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 os.environ['CUDA_VISIBLE_DEVICES'] = f'{args.device}'
 device = torch.device('cuda:0')
 
+#ReviewDataset
 class ReviewDataset(Dataset):
     def __init__(self, file_path):
         with open(file_path, 'r') as file:
