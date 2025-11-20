@@ -300,7 +300,7 @@ def ratings_to_array(ratings):
         r_array[int(rating.item()-1)] = 1
         z.append(r_array)
     return torch.tensor(z).float()
-
+#train
 def train(model, dataloader, optimizer, criterion, device, epoch):
     model.train()
     total_loss = 0
